@@ -12,7 +12,7 @@ def home():
 	if request.method == "POST":
 		area = float(request.form.get("area"))
 		price = model.predict([[area]])
-		msg = "Price = ₹" + str(round(price[0], 2)) + " crs"
+		msg = "Price = ₹" + str(round(price[0], 2)) + " crores"
 		return render_template("home.html", msg=msg)
 	else:
 		return render_template("home.html")
